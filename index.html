@@ -405,7 +405,7 @@
     		<div class="d-flex flex-column flex-md-row gap-2 justify-content-center">
     			<div class="col-md-6 text-center ftco-animate d-lg-flex d-sm-block">
     				<p><a href="./images/Monu_Kushawaha.pdf" class="btn btn-primary py-4 px-5 " download>Download CV</a>
-						<a href="./images/Monu_Kushawaha.pdf" class="btn btn-primary py-4 px-5 ml-5  ">👁️ View CV</a>
+						<a href="./images/Monu_Kushawaha.pdf" class="btn btn-primary py-4 px-5 ml-5  " id="mobileButton">👁️ View CV</a>
 					</p>
     			</div>
     		</div>
@@ -644,7 +644,19 @@
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  
+  <script>// Check if the device matches mobile media query
+	function checkMobileAndRemove() {
+	  const mediaQuery = window.matchMedia('(max-width: 767px)');
+	  const button = document.getElementById('mobileButton');
+	  
+	  if (mediaQuery.matches && button) {
+		button.remove();
+	  }
+	}
+	
+	// Run on load and when media query changes
+	window.addEventListener('load', checkMobileAndRemove);
+	window.matchMedia('(max-width: 767px)').addEventListener('change', checkMobileAndRemove);</script>
   <script src="js/main.js"></script>
     
   </body>
